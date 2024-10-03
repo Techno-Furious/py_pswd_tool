@@ -49,12 +49,12 @@ for i in range(2):
     selected_words = random.choices(key_words, k=2)
     selected_words = [word.capitalize() for word in selected_words]
 
-rad1=random.randint(2, 8900)
-response = supabase.table("key_words").select("key").eq("id", rad1).execute()
-rad2=random.randint(2, 8900)
-response2 = supabase.table("key_words").select("key").eq("id", rad2).execute()
-selected_words = [response.data[0]['key'] if response.data else None, response2.data[0]['key'] if response2.data else None]
-selected_words = [word.capitalize() for word in selected_words]
+# rad1=random.randint(2, 8900)
+# response = supabase.table("key_words").select("key").eq("id", rad1).execute()
+# rad2=random.randint(2, 8900)
+# response2 = supabase.table("key_words").select("key").eq("id", rad2).execute()
+# selected_words = [response.data[0]['key'] if response.data else None, response2.data[0]['key'] if response2.data else None]
+# selected_words = [word.capitalize() for word in selected_words]
 
 def generate_password(keys_list=selected_words):
 
