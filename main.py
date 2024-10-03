@@ -88,9 +88,9 @@ if st.button("Check"):
     if len(password) == 0:
         st.write("Please enter a password.")
     else:
-        key_value(password)
         process=st.empty()
         process.write("Checking password...")
+        key_value(password)
         with open ("common.txt", "r",encoding="utf-8") as file:
             common_passwords = file.read().splitlines()
         if password in common_passwords:
