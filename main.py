@@ -43,11 +43,11 @@ st.markdown('<h1 style="color:#B22222;">Check Your Password Strength</h1>', unsa
 st.write("This app will check if your password has been breached before and will calculate your password strength.")
 password = st.text_input("Enter a password", type="password")
 
-# with open ("keysCleaned.txt",'r',encoding='utf-8') as file:
-#     key_words = file.read().splitlines()
-# for i in range(2):
-#     selected_words = random.choices(key_words, k=2)
-#     selected_words = [word.capitalize() for word in selected_words]
+with open ("keysCleaned.txt",'r',encoding='utf-8') as file:
+    key_words = file.read().splitlines()
+for i in range(2):
+    selected_words = random.choices(key_words, k=2)
+    selected_words = [word.capitalize() for word in selected_words]
 
 rad1=random.randint(2, 8900)
 response = supabase.table("key_words").select("key").eq("id", rad1).execute()
